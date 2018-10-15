@@ -8,7 +8,7 @@ public class Board {
 	public static void main(String[] args) {
 		
 	}
-	public Board() {
+	Board() {
 		for (int i = 0; i < 4; i ++) {
 			this.rows[i]= new Row();
 		}
@@ -23,7 +23,7 @@ public class Board {
 	
 	void drawRow(int n) {
 		for (int i = 0; i < 8; i++) {
-			System.out.print(rows[n].getCell(i));
+			System.out.print(rows[n].getCell(i, 0));
 		}
 	}
 	

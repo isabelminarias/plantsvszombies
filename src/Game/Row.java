@@ -10,10 +10,13 @@ public class Row {
 		}
 	}
 	
-	String getCell(int i) {
+	String getCell(int i, int n) {
 		return cell[i].returnCell();
 	}
 	
+	Cell getCell(int i) {
+		return cell[i];
+	}
 	
 }
 

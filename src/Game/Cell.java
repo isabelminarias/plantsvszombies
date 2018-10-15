@@ -2,17 +2,21 @@ package Game;
 
 public class Cell {
 	int position;
-	int lifePoints;
+	int hp;
+	int birth;
 	boolean empty;
 	String itemType;
-	int damagePoints;
+	int dmg;
 	
 	public Cell() {
 		this.position = 0;
-		this.lifePoints = 0;
+		this.hp = 0;
 		this.empty = true;
-		this.itemType = "X";
-		this.damagePoints = 0;
+		this.dmg = 0;
+	}
+	
+	public Cell(int turn, int p) {
+		this.position = p;
 	}
 	
 	public String returnCell() {
@@ -24,12 +28,24 @@ public class Cell {
 			String cellInfo; 
 			cellInfo="".concat(this.itemType);
 			cellInfo= cellInfo.concat(" [");
-			String lifeInt= Integer.toString(this.lifePoints);
+			String lifeInt= Integer.toString(this.hp);
 			cellInfo=cellInfo.concat(lifeInt);
 			cellInfo=cellInfo.concat("] ");
 			return cellInfo;
 		}
 	}
+	public boolean checkCell() {
+		if (this.empty == true){
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	void move(int n) {
+		
+	}
+	
 	
 	public int getPosition() {
 		return position;
@@ -37,11 +53,11 @@ public class Cell {
 	public void setPosition(int position) {
 		this.position = position;
 	}
-	public int getLifePoints() {
-		return lifePoints;
+	public int getHP() {
+		return hp;
 	}
-	public void setLifePoints(int lifePoints) {
-		this.lifePoints = lifePoints;
+	public void setHP(int lifePoints) {
+		this.hp = lifePoints;
 	}
 	public boolean isEmpty() {
 		return empty;
@@ -49,11 +65,12 @@ public class Cell {
 	public void setEmpty(boolean empty) {
 		this.empty = empty;
 	}
-	public String getItemType() {
-		return itemType;
-	}
-	public void setItemType(String itemType) {
-		this.itemType = itemType;
+	
+	public void emptyCell() {
+		this.position = 0;
+		this.hp = 0;
+		this.empty = true;
+		this.dmg = 0;
 	}
 	
 	
